@@ -1,7 +1,8 @@
 /* 
  * Week 11 Serial Examples 
  * Nov. 19, 2012
- * SVA PIxD
+ * SVA PIx
+ 
  */
 
 const int PIN_PB = 12;
@@ -9,6 +10,8 @@ const int PIN_LIGHT = A1;
 const int PIN_POT = A0;
 const int PIN_LED_RED = 8;
 const int PIN_LED_WHITE = 4;
+
+
 
 void setup(){
 
@@ -26,12 +29,30 @@ void setup(){
 
 
 void loop(){
-  int val;
 
-  val = analogRead( PIN_POT );
-  //Serial.println( val );
-  //Serial.println( ',' );
-  //Serial.print('\n');
+  int val;  
+  int id; // function scope
+
+  id = 1; // potentiometer
+  val = analogRead(PIN_POT);
+
+  Serial.print(val); // the sensor val
+  Serial.print(',');
+  // Serial.print('\n');
+
+  id = 2;
+  val = analogRead(PIN_LIGHT);
+  Serial.print(val);
+  Serial.print(',');
+
+
+  id = 3;
+  val = digitalRead( PIN_PB);
+  Serial.println(val);
+
+
+
+  /// ------
 
   //val = analogRead( PIN_POT );
   //Serial.print( val );
@@ -40,7 +61,10 @@ void loop(){
   //val = digitalRead( PIN_PB );
   //Serial.println( val );
 
-  delay(20);
+  // entire program PAUSES HERE
+  delay(3);
+
+  // resumes normal
 }
 
 /*
@@ -58,6 +82,7 @@ void serialEvent(){
  }
  }
  */
+
 
 
 
