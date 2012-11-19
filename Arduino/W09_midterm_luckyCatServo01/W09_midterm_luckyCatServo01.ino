@@ -8,7 +8,7 @@
 #include <Servo.h> 
 
 // Pin assignments
-const int PIN_CAT_ARM_SERVO = 9; // PWM
+const int PIN_CAT_ARM_SERVO = 3; // PWM
 
 // Servo object
 Servo myservo;
